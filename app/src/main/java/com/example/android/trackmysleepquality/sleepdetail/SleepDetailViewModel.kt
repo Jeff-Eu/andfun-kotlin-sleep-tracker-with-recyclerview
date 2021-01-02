@@ -41,7 +41,8 @@ class SleepDetailViewModel(
 
     /**
      */
-
+    // 我發現寫成降也是可以的，不一定要用後面的 MediatorLiveData
+    //     private val night = database.getNightWithId(sleepNightKey)
     private val night = MediatorLiveData<SleepNight>()
 
     fun getNight() = night

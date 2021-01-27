@@ -102,6 +102,10 @@ class SleepTrackerFragment : Fragment() {
         val manager = GridLayoutManager(activity, 3)
         binding.sleepList.layoutManager = manager
 
+        // Check https://developer.android.com/kotlin/learn for some Kotlin features,
+        // * Simplifying function declarations
+        // * Anonymous functions
+        // * Higher-order functions
         val adapter = SleepNightAdapter(SleepNightListener { nightId ->
             Toast.makeText(context, "${nightId}", Toast.LENGTH_LONG).show()
         })

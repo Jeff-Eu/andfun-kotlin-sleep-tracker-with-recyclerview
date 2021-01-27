@@ -73,6 +73,10 @@ class SleepNightDiffCallback : DiffUtil.ItemCallback<SleepNight>() {
     }
 }
 
+// Check https://developer.android.com/kotlin/learn for some Kotlin features,
+// * Simplifying function declarations
+// * Anonymous functions
+// * Higher-order functions
 class SleepNightListener(val clickListener: (sleepId: Long) -> Unit) {
     fun onClick(night: SleepNight) = clickListener(night.nightId)
 }

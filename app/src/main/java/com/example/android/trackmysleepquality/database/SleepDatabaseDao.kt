@@ -61,6 +61,9 @@ interface SleepDatabaseDao {
      *
      * sorted by start time in descending order.
      */
+    // Notice, if you add suspend keyword here you'll get compile error. Generally the return type here would be List<SleepNight> when
+    // you use Dao query to return a list. You can't use suspended function w/ returning LiveData.
+    // So, you can either suspend the function w/o returning LiveData or use common function w/o suspend keyword for returning LiveData.
     @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
     fun getAllNights(): LiveData<List<SleepNight>>
 
